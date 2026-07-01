@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+env0/
+.venv/
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+
+# SQLite
+*.sqlite3
+*.db
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated images
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# LangGraph checkpoints (if you create them)
+checkpoints/
+memory.db
+
+# Model cache (optional)
+.cache/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Secrets
+*.pem
+*.key
+
+# Ollama (only if you store models locally inside your project)
+models/
+
+# Python bytecode
+*.pyo
+*.pyd
