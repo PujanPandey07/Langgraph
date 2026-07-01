@@ -30,5 +30,9 @@ initial_state = {
 
 final_state = result.invoke(initial_state)
 
-display(Image(result.get_graph().draw_mermaid_png()))
-print("Final State:", final_state)
+png = result.get_graph().draw_mermaid_png()
+
+with open("workflow.png", "wb") as f:
+    f.write(png)
+
+print("Workflow saved as workflow.png")
