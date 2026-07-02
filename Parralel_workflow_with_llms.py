@@ -60,7 +60,7 @@ class Upsc_state(TypedDict):
 def evaluate_language(state: Upsc_state):
 
     prompt = f'Evaluate the language quality of the following essay and provide a feedback and assign a score out of 10 \n {state["essay"]}'
-    output = structured_llm2.invoke(prompt)
+    output = structured_llm1.invoke(prompt)
 
     return {'language_feedback': output.feedback, 'individual_scores': [output.score]}
 
@@ -76,7 +76,7 @@ def evaluate_analysis(state: Upsc_state):
 def evaluate_thought(state: Upsc_state):
 
     prompt = f'Evaluate the clarity of thought of the following essay and provide a feedback and assign a score out of 10 \n {state["essay"]}'
-    output = structured_llm2.invoke(prompt)
+    output = structured_llm1.invoke(prompt)
 
     return {'clarity_feedback': output.feedback, 'individual_scores': [output.score]}
 
@@ -85,7 +85,7 @@ def final_evaluation(state: Upsc_state):
 
     # summary feedback
     prompt = f'Based on the following feedbacks create a summarized feedback \n language feedback - {state["language_feedback"]} \n depth of analysis feedback - {state["analysis_feedback"]} \n clarity of thought feedback - {state["clarity_feedback"]}'
-    overall_feedback = llm2.invoke(prompt).content
+    overall_feedback = llm1.invoke(prompt).content
 
     # avg calculate
     avg_score = sum(state['individual_scores'])/len(state['individual_scores'])
