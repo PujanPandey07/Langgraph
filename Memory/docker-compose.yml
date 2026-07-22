@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: langgraph_postgres
+      POSTGRES_PASSWORD: langgraph_postgres
+      POSTGRES_DB: langgraph_postgres
+    ports:
+      - "5442:5432"
